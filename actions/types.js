@@ -1,0 +1,1 @@
+export const FB_LOGIN_SUCCESS = 'FB_LOGIN_SUCCESS';
