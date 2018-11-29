@@ -31,8 +31,13 @@ export default class App extends React.Component {
             })
           }
         })
+      },
+    }, {
+      defaultNavigationOptions: {
+        tabBarVisible: false
       }
     });
+
     const AppContainer = createAppContainer(MainNavigator);
 
     return (
