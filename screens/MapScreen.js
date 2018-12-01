@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
-import { MapView } from 'expo';
+import { MapView, Permissions } from 'expo';
 import { connect } from 'react-redux';
 import { Button } from 'react-native-elements';
 
@@ -17,7 +17,8 @@ class MapScreen extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    await Permissions.askAsync(Permissions.LOCATION);
     this.setState({ mapLoaded: true });
   }
 
@@ -41,8 +42,8 @@ class MapScreen extends Component {
     return (
       <View style={{ flex: 1 }}>
         <MapView
-          region={this.state.region}
           style={{ flex: 1 }}
+          region={this.state.region}
           onRegionChangeComplete={this.onRegionChangeComplete}
         />
         <View style={styles.buttonContainer}>
