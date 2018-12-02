@@ -11,7 +11,7 @@ class DeckScreen extends Component {
       longitude: job.longitude,
       latitude: job.latitude,
       longitudeDelta: 0.045,
-      longitudeDelta: 0.02
+      latitudeDelta: 0.02
     };
 
     return (
@@ -45,11 +45,12 @@ class DeckScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ marginTop: 20 }}>
         <Swipe
           data={this.props.jobs}
           renderCard={this.renderCard}
           renderNoMoreCards={this.renderNoMoreCards}
+          keyProp="jobkey"
         />
       </View>
     );
