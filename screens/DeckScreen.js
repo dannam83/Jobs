@@ -22,9 +22,9 @@ class DeckScreen extends Component {
             style={{ flex: 1 }}
             cacheEnabled={Platform.OS === 'android' ? true : false}
             initialRegion={initialRegion}
-        >
-        </MapView>
-      </View>
+          >
+          </MapView>
+        </View>
         <View style={styles.detailWrapper}>
           <Text>{job.company}</Text>
           <Text>{job.formattedRelativeTime}</Text>
