@@ -4,7 +4,8 @@ import qs from 'qs';
 import { Location } from 'expo';
 
 import {
-  FETCH_JOBS
+  FETCH_JOBS,
+  LIKE_JOB
 } from './types';
 import JOB_DATA from './job_data.json';
 
@@ -34,5 +35,12 @@ export const fetchJobs = (region, callback) => async dispatch => {
     callback();
   } catch(e) {
     console.log(e);
+  }
+}
+
+export const likeJob = (job) => {
+  return {
+    type: LIKE_JOB,
+    payload: job
   }
 }
