@@ -5,7 +5,8 @@ import { Location } from 'expo';
 
 import {
   FETCH_JOBS,
-  LIKE_JOB
+  LIKE_JOB,
+  CLEAR_LIKED_JOBS
 } from './types';
 import JOB_DATA from './job_data.json';
 
@@ -42,5 +43,11 @@ export const likeJob = (job) => {
   return {
     type: LIKE_JOB,
     payload: job
+  }
+}
+
+export const clearLikedJobs = (job) => {
+  return {
+    type: CLEAR_LIKED_JOBS
   }
 }
