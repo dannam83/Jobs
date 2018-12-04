@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Icon } from 'react-native-elements';
 import {
   createAppContainer,
   createBottomTabNavigator,
@@ -28,7 +29,20 @@ export default class App extends React.Component {
             screen: createStackNavigator({
               review: { screen: ReviewScreen },
               settings: { screen: SettingsScreen }
+            }, {
+              navigationOptions: ({ navigation }) => {
+                return {
+                  title: "Review Jobs",
+                  tabBarIcon: ({ tintColor }) => {
+                    return <Icon name="favorite" size={30} color={tintColor} />;
+                  }
+                }
+              }
             })
+          }
+        }, {
+          tabBarOptions: {
+            labelStyle: { fontSize: 12 }
           }
         })
       },

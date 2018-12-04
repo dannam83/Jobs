@@ -8,6 +8,7 @@ class ReviewScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: 'Review Jobs',
+      tabBarLabel: 'Review Jobs',
       headerRight: (
         <Button
           title="Settings"
