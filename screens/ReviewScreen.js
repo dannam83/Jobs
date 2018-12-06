@@ -25,6 +25,8 @@ class ReviewScreen extends Component {
 
   renderLikedJobs() {
     return this.props.likedJobs.map(job => {
+      if (!job) { return; }
+
       const {
         company, formattedRelativeTime, url,
         longitude, latitude, jobtitle, jobkey
